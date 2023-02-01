@@ -43,7 +43,7 @@ for n,(i,row) in enumerate(data.iterrows()):
     
     
         
-    # Fill in the form
+    # Fill in the form text fields
     driver.find_element(By.XPATH,'//*[@id="ctl00_ContentPlaceHolder1_grdStaff_ctl03_AddIDNo"]').send_keys(row["National/Alien_ID_No"])
     driver.find_element(By.XPATH,'//*[@id="ctl00_ContentPlaceHolder1_grdStaff_ctl03_AddEmpNo"]').send_keys(row["Employment No"])
     driver.find_element(By.XPATH,'//*[@id="ctl00_ContentPlaceHolder1_grdStaff_ctl03_AddSName"]').send_keys(row["SurName"])
@@ -59,7 +59,7 @@ for n,(i,row) in enumerate(data.iterrows()):
     
 
 
-    
+    #dropdown menus
     gender = Select(driver.find_element(By.XPATH,'//*[@id="ctl00_ContentPlaceHolder1_grdStaff_ctl03_nGender_List"]'))
     gender.select_by_visible_text(row["Gender"])
     marital_status = Select(driver.find_element(By.XPATH,'//*[@id="ctl00_ContentPlaceHolder1_grdStaff_ctl03_nMarital_List"]'))
